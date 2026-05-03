@@ -29,18 +29,49 @@ const scrollActive = () =>{
 
   sections.forEach(current =>{
         const sectionHeight = current.offsetHeight,
-              sectionTop = current.offsetTop - 58,
+              sectionTop = current.offsetTop - 50,
               sectionId = current.getAttribute('id'),
-              sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+              sectionsClass = document.querySelector('.nav__link[href*=' + sectionId + ']')
         
         if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
-            sectionsClass.classList.add('active-link')
+            sectionsClass?.classList.add('active-link')
         }else{
-            sectionsClass.classList.remove('active-link')
+            sectionsClass?.classList.remove('active-link')
         }                                                    
     })
 }
 window.addEventListener('scroll', scrollActive)
+
+/*==================== PROJECT CAROUSEL ====================*/
+const initProjectCarousel = () => {
+    const projectItems = document.querySelectorAll('.project-item')
+    
+    projectItems.forEach(item => {
+        const imagesContainer = item.querySelector('.project-item__images')
+        const images = item.querySelectorAll('.project-item__img')
+        const prevBtn = item.querySelector('.project-item__nav--prev')
+        const nextBtn = item.querySelector('.project-item__nav--next')
+        
+        let currentIndex = 0
+        
+        const updateCarousel = () => {
+            const offset = -currentIndex * 100
+            imagesContainer.style.transform = `translateX(${offset}%)`
+        }
+        
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length
+            updateCarousel()
+        })
+        
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length
+            updateCarousel()
+        })
+    })
+}
+
+document.addEventListener('DOMContentLoaded', initProjectCarousel)
 
 /*===== SCROLL REVEAL ANIMATION =====*/
 const sr = ScrollReveal({
@@ -54,4 +85,4 @@ const sr = ScrollReveal({
 sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
-sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+sr.reveal('.project-item',{interval: 200}); 
