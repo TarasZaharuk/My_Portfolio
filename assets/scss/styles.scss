@@ -161,6 +161,42 @@ img{
         font-size: 1.5rem;
         cursor: pointer;
     }
+    &__lang{
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        margin-right: var(--mb-2);
+
+        @media screen and (min-width: 768px){
+            margin-right: 0;
+        }
+    }
+    &__lang-btn{
+        background: none;
+        border: none;
+        padding: 0 .25rem;
+        font-family: var(--body-font);
+        font-size: var(--smaller-font-size);
+        font-weight: var(--font-semi);
+        text-transform: uppercase;
+        color: var(--second-color);
+        opacity: .5;
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover{
+            opacity: 1;
+        }
+        &.active-lang{
+            color: var(--first-color);
+            opacity: 1;
+        }
+    }
+    &__lang-sep{
+        color: var(--second-color);
+        font-size: var(--smaller-font-size);
+        opacity: .5;
+    }
 }
 /*Active menu*/
 .active-link::after{

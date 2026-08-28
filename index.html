@@ -9,7 +9,7 @@
         <!-- =====BOX ICONS===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-        <title>Portfolio website</title>
+        <title data-i18n="pageTitle">Portfolio website</title>
     </head>
     <body>
         <!--===== HEADER =====-->
@@ -21,11 +21,18 @@
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                        <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+                        <li class="nav__item"><a href="#home" class="nav__link active-link" data-i18n="navHome">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link" data-i18n="navAbout">About</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link" data-i18n="navSkills">Skills</a></li>
+                        <li class="nav__item"><a href="#work" class="nav__link" data-i18n="navWork">Work</a></li>
                     </ul>
+                </div>
+
+                <!--===== LANGUAGE SWITCHER =====-->
+                <div class="nav__lang" role="group" aria-label="Language">
+                    <button type="button" class="nav__lang-btn active-lang" data-lang="en" aria-pressed="true">EN</button>
+                    <span class="nav__lang-sep" aria-hidden="true">|</span>
+                    <button type="button" class="nav__lang-btn" data-lang="de" aria-pressed="false">DE</button>
                 </div>
 
                 <div class="nav__toggle" id="nav-toggle">
@@ -38,9 +45,9 @@
             <!--===== HOME =====-->
             <section class="home bd-grid" id="home">
                 <div class="home__data">
-                    <h1 class="home__title">Hello,<br>I'am <span class="home__title-color">Taras</span><br> Web Developer</h1>
+                    <h1 class="home__title" data-i18n="homeTitle">Hello,<br>I'am <span class="home__title-color">Taras</span><br> Web Developer</h1>
 
-                    <a href="assets/Software_Engineer_C%23.Net_cv.pdf" class="button" target="_blank">Get Resume</a>
+                    <a href="assets/Software_Engineer_C%23.Net_cv.pdf" class="button" target="_blank" data-i18n="homeButton">Get Resume</a>
                 </div>
 
                 <div class="home__social">
@@ -63,7 +70,7 @@
 
             <!--===== ABOUT =====-->
             <section class="about section " id="about">
-                <h2 class="section-title">About</h2>
+                <h2 class="section-title" data-i18n="aboutTitle">About</h2>
 
                 <div class="about__container bd-grid">
                     <div class="about__img">
@@ -71,22 +78,22 @@
                     </div>
                     
                     <div>
-                        <h2 class="about__subtitle">I'am Taras</h2>
-                        <p class="about__text">.NET Software Engineer with around 2 years of experience developing web applications using C#/.NET and Blazor as a front-end framework. I am a reliable team player who is not afraid to use AI tools where appropriate. </p>
+                        <h2 class="about__subtitle" data-i18n="aboutSubtitle">I'am Taras</h2>
+                        <p class="about__text" data-i18n="aboutText1">.NET Software Engineer with around 2 years of experience developing web applications using C#/.NET and Blazor. I write clean, well-structured code with a solid grasp of modern software architectures and design patterns, and bring hands-on experience with software deployment, Docker and CI/CD. Reliable team player. </p>
                         <br>
-                        <p class="about__text">If your company is looking for not just a coder, but a dedicated Software Engineer who values quality and takes personal initiative, I would be glad to contribute.</p>           
+                        <p class="about__text" data-i18n="aboutText2">If your company is looking for not just a coder, but a dedicated Software Engineer who values quality and takes personal initiative, I would be glad to contribute.</p>           
                     </div>                                   
                 </div>
             </section>
 
             <!--===== SKILLS =====-->
             <section class="skills section" id="skills">
-                <h2 class="section-title">Skills</h2>
+                <h2 class="section-title" data-i18n="skillsTitle">Skills</h2>
 
                 <div class="skills__container bd-grid">
                     <div class="skills__full-width">
-                        <h2 class="skills__subtitle">Profesional Skills</h2>
-                        <p class="skills__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit optio id vero amet, alias architecto consectetur error eum eaque sit.</p>
+                        <h2 class="skills__subtitle" data-i18n="skillsSubtitle">Professional Skills</h2>
+                        <p class="skills__text" data-i18n="skillsText"></p>
                         
                         <div class="skills__badges">
                             <span class="skills__badge">.NET</span>
@@ -101,7 +108,7 @@
                             <span class="skills__badge">WPF</span>
                             <span class="skills__badge">Git</span>
                             <span class="skills__badge">Microsoft Azure Tools</span>
-                            <span class="skills__badge">Unit Testing</span>
+                            <span class="skills__badge" data-i18n="badgeUnitTesting">Unit Testing</span>
                             <span class="skills__badge">Docker</span>
                             <span class="skills__badge">LINQ</span>
                         </div>
@@ -115,7 +122,7 @@
 
             <!--===== WORK =====-->
             <section class="work section" id="work">
-                <h2 class="section-title">Work</h2>
+                <h2 class="section-title" data-i18n="workTitle">Work</h2>
 
                 <div class="work__container bd-grid">
                     <!--===== Project Item 1 =====-->
@@ -132,7 +139,7 @@
                             <button class="project-item__nav project-item__nav--prev" aria-label="Previous image">❮</button>
                             <button class="project-item__nav project-item__nav--next" aria-label="Next image">❯</button>
                         </div>
-                        <p class="project-item__description"><a href="https://learnit.victoriousplant-5d5f846b.westeurope.azurecontainerapps.io" class="project-item__link" target="_blank">DevConnect</a> is a web platform built for developers, tutors, and students who want to connect, collaborate, and solve coding challenges together.</p>
+                        <p class="project-item__description" data-i18n="project1"><a href="https://learnit.victoriousplant-5d5f846b.westeurope.azurecontainerapps.io" class="project-item__link" target="_blank">DevConnect</a> is a web platform built for developers, tutors, and students who want to connect, collaborate, and solve coding challenges together.</p>
                     </div>
 
                     <!--===== Project Item 2 =====-->
@@ -152,7 +159,7 @@
                             <button class="project-item__nav project-item__nav--prev" aria-label="Previous image">❮</button>
                             <button class="project-item__nav project-item__nav--next" aria-label="Next image">❯</button>
                         </div>
-                        <p class="project-item__description">A team project where I developed the backend side and API for a fitness club website, including an integrated SRM-system for managing members, schedules, and trainers.</p>
+                        <p class="project-item__description" data-i18n="project2">A team project where I developed the backend side and API for a fitness club website, including an integrated SRM-system for managing members, schedules, and trainers.</p>
                     </div>
 
                     <!--===== Project Item 3 =====-->
@@ -165,7 +172,7 @@
                             <button class="project-item__nav project-item__nav--prev" aria-label="Previous image">❮</button>
                             <button class="project-item__nav project-item__nav--next" aria-label="Next image">❯</button>
                         </div>
-                            <p class="project-item__description">A tool that uses Git change tracking to generate complete and secure SQL migrations, designed for large solutions and projects working with ADO.NET or Dapper. Through this project I sharpened my T-SQL and Git skills.</p>
+                            <p class="project-item__description" data-i18n="project3">A tool that uses Git change tracking to generate complete and secure SQL migrations, designed for large solutions and projects working with ADO.NET or Dapper. Through this project I sharpened my T-SQL and Git skills.</p>
                         </div>
 
                     <!--===== Project Item 4 =====-->
@@ -178,7 +185,7 @@
                             <button class="project-item__nav project-item__nav--prev" aria-label="Previous image">❮</button>
                             <button class="project-item__nav project-item__nav--next" aria-label="Next image">❯</button>
                         </div>
-                        <p class="project-item__description">A tool used by fire organizations to handle their accounting needs, exporting results as Excel files via the ClosedXML library. Through this project I gained practical experience with WPF/XAML.</p>
+                        <p class="project-item__description" data-i18n="project4">A tool used by fire organizations to handle their accounting needs, exporting results as Excel files via the ClosedXML library. Through this project I gained practical experience with WPF/XAML.</p>
                     </div>
 
                     <!--===== Project Item 5 =====-->
@@ -190,7 +197,7 @@
                             <button class="project-item__nav project-item__nav--prev" aria-label="Previous image">❮</button>
                             <button class="project-item__nav project-item__nav--next" aria-label="Next image">❯</button>
                         </div>
-                            <p class="project-item__description">A desktop application developed for a furniture company to automate their documentation. I worked on the tax document generation process.</p>
+                            <p class="project-item__description" data-i18n="project5">A desktop application developed for a furniture company to automate their documentation. I worked on the tax document generation process.</p>
                     </div>
                 </div>
             </section>
